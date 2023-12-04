@@ -31,8 +31,8 @@ void setup()
   pinMode(leftMotorPin1, OUTPUT);
   pinMode(leftMotorPin2, OUTPUT);
 
-  pinMode(IR_SENSOR_RIGHT, INPUT);
-  pinMode(IR_SENSOR_LEFT, INPUT);
+  pinMode(IR_SENSOR_RIGHT, INPUT); // out 5
+  pinMode(IR_SENSOR_LEFT, INPUT); // out 1
   rotateMotor(0,0);   
 }
 
