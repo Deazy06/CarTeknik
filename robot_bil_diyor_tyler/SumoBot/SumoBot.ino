@@ -1,5 +1,5 @@
 #include "Ultrasonic.h"
-#include "InfraredTypes.h"
+
 
 Ultrasonic ultrasonic(4, 3);
 
@@ -7,7 +7,7 @@ const int IN1 = 5;
 const int IN2 = 6;
 const int IN3 = 9;
 const int IN4 = 10;
-#define IR_sensor_front 4  // front sensor
+#define IR_sensor_front 5  // front sensor
 int distance;
 
 void setup() {
