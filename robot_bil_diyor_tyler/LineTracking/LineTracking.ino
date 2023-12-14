@@ -1,6 +1,7 @@
-#define IR_SENSOR_RIGHT 11
-#define IR_SENSOR_LEFT 12
+#define IR_SENSOR_RIGHT 2
+#define IR_SENSOR_LEFT 4
 #define MOTOR_SPEED 180
+#include <Arduino.h>
 
 //Right motor
 int enableRightMotor=6;
@@ -20,7 +21,6 @@ void setup()
   //Below line is important to change the frequency of PWM signal on pin D5 and D6
   //Because of this, motor runs in controlled manner (lower speed) at high PWM value.
   //This sets frequecny as 7812.5 hz.
-  TCCR0B = TCCR0B & B11111000 | B00000010 ;
   
   // put your setup code here, to run once:
   pinMode(enableRightMotor, OUTPUT);
@@ -39,7 +39,8 @@ void setup()
 
 void loop()
 {
-
+  Serial.println(IR_SENSOR_RIGHT);
+  Serial.println(IR_SENSOR_LEFT);
   int rightIRSensorValue = digitalRead(IR_SENSOR_RIGHT);
   int leftIRSensorValue = digitalRead(IR_SENSOR_LEFT);
 
