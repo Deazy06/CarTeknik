@@ -52,22 +52,23 @@ void loop()
   int leftIRSensorValue = digitalRead(IR_SENSOR_LEFT);
 
   Serial.println("Right IR sensor");
-  Serial.println(rightIRSensorValue == LOW ? "Black" : "White");
+  Serial.println(rightIRSensorValue < 650 ? "Black" : "White");
   Serial.println("Left IR sensor");
-  Serial.println(leftIRSensorValue == LOW ? "Black" : "White");
+  Serial.println(leftIRSensorValue  < 650 ? "Black" : "White");
 
   //If none of the sensors detects black line, then go straight
-  if (rightIRSensorValue == LOW && leftIRSensorValue == LOW)
+  if (rightIRSensorValue > 650 && leftIRSensorValue > 650)
   {
     rotateMotor(MOTOR_SPEED, MOTOR_SPEED);
   }
+  
   //If right sensor detects black line, then turn right
-  else if (rightIRSensorValue == HIGH && leftIRSensorValue == LOW )
+  else if (rightIRSensorValue < 650 && leftIRSensorValue > 650)
   {
       rotateMotor(-MOTOR_SPEED, MOTOR_SPEED); 
   }
   //If left sensor detects black line, then turn left  
-  else if (rightIRSensorValue == LOW && leftIRSensorValue == HIGH )
+  else if (rightIRSensorValue > 650 && leftIRSensorValue < 650 )
   {
       rotateMotor(MOTOR_SPEED, -MOTOR_SPEED); 
   } 
