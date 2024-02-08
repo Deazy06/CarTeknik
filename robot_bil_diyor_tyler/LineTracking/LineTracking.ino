@@ -4,14 +4,14 @@
 #include <Arduino.h>
 
 //Right motor
-int enableRightMotor=6;
-int rightMotorPin1=7;
-int rightMotorPin2=8;
+int enableRightMotor=18;
+int rightMotorPin1=19;
+int rightMotorPin2=23;
 
 //Left motor
 int enableLeftMotor=5;
-int leftMotorPin1=9;
-int leftMotorPin2=10;
+int leftMotorPin1=13;
+int leftMotorPin2=12;
 
 //float PWMfr=7812.5;
 
@@ -117,3 +117,4 @@ void rotateMotor(int rightMotorSpeed, int leftMotorSpeed)
   analogWrite(enableRightMotor, abs(rightMotorSpeed));
   analogWrite(enableLeftMotor, abs(leftMotorSpeed));    
 }
+
